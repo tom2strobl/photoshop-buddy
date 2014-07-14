@@ -1,6 +1,60 @@
 # Photoshop Buddy
 
-Presenting a simple command-line interface for photoshop documents.
+A simple command-line interface for interacting with photoshop documents.
+
+## Installation
+
+Requirements: [node and npm](http://nodejs.org/), you might need to sudo the following installation:
+
+    npm install -g photoshop
+
+Now see if its installed correctly
+
+    photoshop
+
+## Usage
+
+Using photoshop just with a filename results in the opening command, which opens the specified document.
+
+    photoshop test.psd
+
+which is the same as
+
+    photoshop open test.psd
+
+You can export the file as a PNG using:
+
+    photoshop export test.psd
+
+To display information about the photoshop document:
+
+    photoshop info test.psd
+
+Of course you can also use flags instead of commands:
+
+    Usage: photoshop [options]
+
+    Options:
+
+        -h, --help     output usage information
+        -V, --version  output the version number
+        -o, --open     Open file in Photoshop
+        -e, --export   Export PNG image from document
+        -i, --info     Display information
+
+    Examples:
+
+        $ photoshop -o file.psd
+
+## Caveats
+
+Currently only working on OSX. Might be only minimal work to support Windows (file open command and path normalization), but aint got no PC around right now. Not running on Linux because, well, there aint no Photoshop. Doh!
+
+## Roadmap
+
+- Write tests
+- Specify file type and name on export
+- Maybe specify a layer comp to export
 
 ## License
 
