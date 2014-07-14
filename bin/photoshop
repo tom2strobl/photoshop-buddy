@@ -1,0 +1,85 @@
+#!/usr/bin/env node
+
+var app = require('commander');
+var exec = require('child_process').exec;
+var _ = require('underscore');
+var colors = require('colors');
+var PSD = require('psd');
+var psd;
+var fs = require('fs');
+// starting time
+var start = new Date();
+// search arguments for filepath
+var filepath = _.find(process.argv, function(arg){
+    return arg.split('.').pop() === 'psd';
+});
+// cosmetic banner on linestart
+var title = '[Photoshop Buddy] '.blue;
+
+var Photoshop = {
+    checkFile: function(){
+        // first check if there was a .psd file specified and if it exist afterwards
+        if(filepath === undefined){
+            console.log(title + 'Error: '.red + 'No .psd file was specified.');
+            return false;
+        }else{
+            if (fs.existsSync(filepath)) {
+                return true;
+            }else{
+                console.log(title + 'Error: '.red + 'The specified file was not found.');
+                return false;
+            }
+        }
+    },
+    exportImage: function(){
+        if(Photoshop.checkFile()){
+            var exportpath = filepath.slice(0,-4) + '.png';
+            console.log(title + 'Exporting the document '+ filepath.green +' to '+ exportpath.green +'.');
+            // PSD.open(filepath).then(function (psd) {
+            //   return psd.image.saveAsPng('./output.png');
+            // }).then(function () {
+            //   console.log("Finished in " + ((new Date()) - start) + "ms");
+            // });
+        }
+    },
+    displayInfo: function(){
+        if(Photoshop.checkFile()){
+            console.log(title + 'Information for the document '+ filepath.green +':');
+            console.log('');
+            console.log('Title: '.green + 'none');
+        }
+    },
+    openDocument: function(){
+        if(Photoshop.checkFile()){
+            child = exec("open "+filepath+' -b "com.adobe.photoshop"', function (error, stdout, stderr) {
+                if (error !== null) {
+                    console.log(title + error);
+                }else{
+                    console.log(title + 'Opening '+ filepath +' with Photoshop.');
+                }
+            });
+        }
+    }
+}
+
+app.version('0.0.1')
+  .option('-o, --open', 'Open file in Photoshop', Photoshop.openDocument)
+  .option('-e, --export', 'Export PNG image from document', Photoshop.exportImage)
+  .option('-i, --info', 'Display information', Photoshop.displayInfo);
+
+app.on('--help', function(){
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ photoshop -o file.psd');
+  console.log('');
+});
+
+// if there are no arguments at all
+
+if(process.argv.length === 2){
+    console.log(title + 'Photoshop Buddy is installed! Use '+'photoshop --help'.green + ' to get started.');
+}
+
+// parse the arguments
+
+app.parse(process.argv);

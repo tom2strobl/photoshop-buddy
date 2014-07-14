@@ -1,0 +1,29 @@
+{
+  "name": "photoshop",
+  "version": "0.0.1",
+  "description": "A simple command wrapper for opening files with photoshop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tom2strobl/photoshop"
+  },
+  "keywords": [
+    "photoshop",
+    "psd"
+  ],
+  "author": "Thomas Strobl @tom2strobl <thomas@thomas-strobl.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom2strobl/photoshop/issues"
+  },
+  "homepage": "https://github.com/tom2strobl/photoshop",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "commander": "^2.2.0",
+    "psd": "0.0.4",
+    "underscore": "^1.6.0"
+  }
+}
