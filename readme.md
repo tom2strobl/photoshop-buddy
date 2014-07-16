@@ -1,6 +1,8 @@
+# Currently not working and not pushed to NPM yet!
+
 # Photoshop Buddy
 
-[![NPM](https://nodei.co/npm/async.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
+[![NPM](https://nodei.co/npm/photoshop-buddy.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
 
 A simple command-line interface for interacting with photoshop documents.
 
@@ -46,7 +48,9 @@ Of course you can also use flags instead of commands:
 
     Examples:
 
-        $ photoshop -o file.psd
+        $ photoshop open file.psd
+        $ photoshop --export file.psd
+        $ photoshop -i file.psd
 
 ## Caveats
 
@@ -55,6 +59,7 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 ## Roadmap
 
 - Write tests
+- use travis-ci and add md-image
 - Specify file type and name on export
 - Maybe specify a layer comp to export
 
