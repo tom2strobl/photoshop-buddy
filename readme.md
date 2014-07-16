@@ -1,12 +1,14 @@
 # Photoshop Buddy
 
+[![NPM](https://nodei.co/npm/async.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
+
 A simple command-line interface for interacting with photoshop documents.
 
 ## Installation
 
 Requirements: [node and npm](http://nodejs.org/), you might need to sudo the following installation:
 
-    npm install -g photoshop
+    npm install -g photoshop-buddy
 
 Now see if its installed correctly
 
