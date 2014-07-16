@@ -1,32 +1,39 @@
 {
-    "name": "photoshop",
-    "version": "0.0.1",
-    "license": "MIT",
-    "description": "A simple command wrapper for opening files with photoshop.",
-    "preferGlobal": "true",
-    "author": "Thomas Strobl @tom2strobl <thomas@thomas-strobl.com>",
-    "homepage": "https://github.com/tom2strobl/photoshop",
-    "bin": {
-        "photoshop": "./bin/photoshop"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tom2strobl/photoshop"
-    },
-    "bugs": {
-        "url": "https://github.com/tom2strobl/photoshop/issues"
-    },
-    "keywords": [
-        "photoshop",
-        "psd"
-    ],
-    "dependencies": {
-        "colors": "^0.6.2",
-        "commander": "^2.2.0",
-        "psd": "0.0.4",
-        "underscore": "^1.6.0"
-    }
+  "name": "photoshop-buddy",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "A simple command wrapper for opening files with photoshop.",
+  "preferGlobal": "true",
+  "author": "Thomas Strobl @tom2strobl <thomas@thomas-strobl.com>",
+  "homepage": "https://github.com/tom2strobl/photoshop",
+  "bin": {
+    "photoshop": "./bin/photoshop"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tom2strobl/photoshop"
+  },
+  "bugs": {
+    "url": "https://github.com/tom2strobl/photoshop/issues"
+  },
+  "keywords": [
+    "photoshop",
+    "psd"
+  ],
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "coffeeify": "^0.6.0",
+    "coffeescript-module": "^0.2.1",
+    "colors": "^0.6.2",
+    "commander": "^2.2.0",
+    "jspack": "0.0.3",
+    "lodash": "^2.4.1",
+    "psd": "0.0.4",
+    "rimraf": "^2.2.8",
+    "rsvp": "^3.0.9",
+    "underscore": "^1.6.0"
+  }
 }
