@@ -1,6 +1,6 @@
 # Photoshop Buddy
 
-[![NPM](https://nodei.co/npm/async.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
+[![NPM](https://nodei.co/npm/photoshop-buddy.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
 
 A simple command-line interface for interacting with photoshop documents.
 
