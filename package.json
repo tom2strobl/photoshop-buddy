@@ -24,16 +24,8 @@
     "psd"
   ],
   "dependencies": {
-    "coffee-script": "^1.7.1",
-    "coffeeify": "^0.6.0",
-    "coffeescript-module": "^0.2.1",
     "colors": "^0.6.2",
     "commander": "^2.2.0",
-    "jspack": "0.0.3",
-    "lodash": "^2.4.1",
-    "psd": "0.0.4",
-    "rimraf": "^2.2.8",
-    "rsvp": "^3.0.9",
     "underscore": "^1.6.0"
   }
 }

@@ -1,4 +1,4 @@
-# Currently not working and not pushed to NPM yet!
+# Not working yet, as the correct version of the psd.js dependency is not on npm yet
 
 # Photoshop Buddy
 
@@ -58,10 +58,16 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 
 ## Roadmap
 
+- font command to display used font names and sizes
+- colors command to display used color codes
+- Specify file type and name on export
+- Minify images upon export
+- Specify options for @2x versions
+- Specify a layer comp to export
+- Export all slices
+- Export CSS from document
 - Write tests
 - use travis-ci and add md-image
-- Specify file type and name on export
-- Maybe specify a layer comp to export
 
 ## License
 

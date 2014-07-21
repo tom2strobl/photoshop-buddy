@@ -8,7 +8,7 @@ var app = require('commander');
 var exec = require('child_process').exec;
 var _ = require('underscore');
 var colors = require('colors');
-var PSD = require('psd');
+var PSD = require('psd.js');
 var fs = require('fs');
 
 /**
@@ -35,6 +35,12 @@ var Photoshop = {
      */
 
     filepath: undefined,
+
+    /**
+     * Array containing the descriptions of the color modes in correct order
+     */
+
+    colorMode: ['Bitmap (monochrome)', 'Gray-scale', 'Indexed color (palette color)', 'RGB color', 'CMYK color', 'Multichannel color', 'Duotone (halftone)', 'Lab color', 'Gray16', 'RGB48', 'Lab48', 'CMYK64', 'DeepMultichannel', 'Duotone16'];
 
     /**
      * Initialize the App
@@ -136,12 +142,12 @@ var Photoshop = {
     exportImage: function(){
         if(Photoshop.checkFile()){
             var exportpath = Photoshop.filepath.slice(0,-4) + '.png';
-            console.log(Photoshop.banner + 'Exporting the document '+ Photoshop.filepath.green +' to '+ exportpath.green +'.');
-            // PSD.open(filepath).then(function (psd) {
-            //   return psd.image.saveAsPng('./output.png');
-            // }).then(function () {
-            //   console.log("Finished in " + ((new Date()) - start) + "ms");
-            // });
+            console.log(Photoshop.banner + 'Started exporting the document '+ Photoshop.filepath.green +'.');
+            PSD.open(Photoshop.filepath).then(function (psd) {
+              return psd.image.saveAsPng('./' + exportpath);
+            }).then(function () {
+              console.log(Photoshop.banner + "Finished exporting "+ exportpath.green +" in " + ((new Date()) - start) + "ms.");
+            });
         }
     },
 
@@ -154,7 +160,16 @@ var Photoshop = {
         if(Photoshop.checkFile()){
             console.log(Photoshop.banner + 'Information for the document '+ Photoshop.filepath.green +':');
             console.log('');
-            console.log('Photoshop.banner: '.green + 'none');
+            PSD.open(Photoshop.filepath).then(function (psd) {
+                console.log("Width: ".green + psd.header.width + "px");
+                console.log("Height: ".green + psd.header.height + "px");
+                console.log("Color Channels (incl. Alpha): ".green + psd.header.channels);
+                console.log("Bits per Channel (1/8/16): ".green + psd.header.depth);
+                console.log("Color Mode: ".green + Photoshop.colorMode[psd.header.mode]);
+            }).then(function () {
+                console.log('');
+                console.log(Photoshop.banner + "Finished displaying the information in " + ((new Date()) - start) + "ms.");
+            });
         }
     },
 
