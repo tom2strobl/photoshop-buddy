@@ -1,6 +1,6 @@
 {
   "name": "photoshop-buddy",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "A simple command wrapper for opening files with photoshop.",
   "preferGlobal": "true",
@@ -21,7 +21,9 @@
   },
   "keywords": [
     "photoshop",
-    "psd"
+    "psd",
+    "adobe",
+    "cli"
   ],
   "dependencies": {
     "colors": "^0.6.2",

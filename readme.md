@@ -4,6 +4,9 @@
 
 [![NPM](https://nodei.co/npm/photoshop-buddy.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
 
+[![DEP](https://david-dm.org/tom2strobl/photoshop-buddy.png)](https://david-dm.org/tom2strobl/photoshop-buddy)
+[![USELESS](http://img.shields.io/badge/useless-badge-green.svg)]()
+
 A simple command-line interface for interacting with photoshop documents.
 
 ## Installation
@@ -58,7 +61,7 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 
 ## Roadmap
 
-- font command to display used font names and sizes
+- fonts command to display used font names and sizes
 - colors command to display used color codes
 - Specify file type and name on export
 - Minify images upon export
@@ -66,8 +69,7 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 - Specify a layer comp to export
 - Export all slices
 - Export CSS from document
-- Write tests
-- use travis-ci and add md-image
+- Write tests and use travis-ci + add md-image
 
 ## License
 
