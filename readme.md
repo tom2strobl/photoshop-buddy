@@ -3,6 +3,8 @@
 # Photoshop Buddy
 
 [![NPM](https://nodei.co/npm/photoshop-buddy.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
+[![DEP](https://david-dm.org/tom2strobl/photoshop-buddy.png)](https://david-dm.org/tom2strobl/photoshop-buddy)
+[![USELESS](http://img.shields.io/badge/useless-badge-green.svg)]()
 
 [![DEP](https://david-dm.org/tom2strobl/photoshop-buddy.png)](https://david-dm.org/tom2strobl/photoshop-buddy)
 [![USELESS](http://img.shields.io/badge/useless-badge-green.svg)]()
