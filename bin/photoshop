@@ -53,7 +53,7 @@ var Photoshop = {
          * Map options to Singleton functions
          */
 
-        app.version('1.0.1')
+        app.version('1.0.2')
           .option('-o, --open', 'Open file in Photoshop', Photoshop.openDocument)
           .option('-e, --export', 'Export PNG image from document', Photoshop.exportImage)
           .option('-i, --info', 'Display information', Photoshop.displayInfo);
