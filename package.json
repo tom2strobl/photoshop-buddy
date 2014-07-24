@@ -1,6 +1,6 @@
 {
   "name": "photoshop-buddy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "A simple command wrapper for opening files with photoshop.",
   "preferGlobal": "true",

@@ -1,5 +1,3 @@
-# Not working yet, as the correct version of the psd.js dependency is not on npm yet
-
 # Photoshop Buddy
 
 [![NPM](https://nodei.co/npm/photoshop-buddy.png?downloads=true)](https://nodei.co/npm/photoshop-buddy/)
