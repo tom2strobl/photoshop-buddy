@@ -8,7 +8,7 @@ var app = require('commander');
 var exec = require('child_process').exec;
 var _ = require('underscore');
 var colors = require('colors');
-var PSD = require('psd.js');
+var PSD = require('psd');
 var fs = require('fs');
 
 /**
@@ -40,7 +40,7 @@ var Photoshop = {
      * Array containing the descriptions of the color modes in correct order
      */
 
-    colorMode: ['Bitmap (monochrome)', 'Gray-scale', 'Indexed color (palette color)', 'RGB color', 'CMYK color', 'Multichannel color', 'Duotone (halftone)', 'Lab color', 'Gray16', 'RGB48', 'Lab48', 'CMYK64', 'DeepMultichannel', 'Duotone16'];
+    colorMode: ['Bitmap (monochrome)', 'Gray-scale', 'Indexed color (palette color)', 'RGB color', 'CMYK color', 'Multichannel color', 'Duotone (halftone)', 'Lab color', 'Gray16', 'RGB48', 'Lab48', 'CMYK64', 'DeepMultichannel', 'Duotone16'],
 
     /**
      * Initialize the App

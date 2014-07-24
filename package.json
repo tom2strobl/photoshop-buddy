@@ -28,6 +28,7 @@
   "dependencies": {
     "colors": "^0.6.2",
     "commander": "^2.2.0",
+    "psd": "^1.0.2",
     "underscore": "^1.6.0"
   }
 }
