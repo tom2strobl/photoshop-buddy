@@ -35,6 +35,10 @@ To display information about the photoshop document:
 
     photoshop info test.psd
 
+To display the layer tree of the photoshop document:
+
+    photoshop tree test.psd
+
 Of course you can also use flags instead of commands:
 
     Usage: photoshop [options]
@@ -46,12 +50,14 @@ Of course you can also use flags instead of commands:
         -o, --open     Open file in Photoshop
         -e, --export   Export PNG image from document
         -i, --info     Display information
+        -t, --tree     Show layer tree
 
     Examples:
 
         $ photoshop open file.psd
         $ photoshop --export file.psd
         $ photoshop -i file.psd
+        $ photoshop -t file.psd
 
 ## Caveats
 
@@ -63,7 +69,6 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 - colors command to display used color codes
 - Specify file type and name on export
 - Minify images upon export
-- Specify options for @2x versions
 - Specify a layer comp to export
 - Export all slices
 - Export CSS from document

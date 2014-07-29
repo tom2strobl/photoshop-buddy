@@ -53,10 +53,11 @@ var Photoshop = {
          * Map options to Singleton functions
          */
 
-        app.version('1.0.2')
+        app.version('1.0.3')
           .option('-o, --open', 'Open file in Photoshop', Photoshop.openDocument)
           .option('-e, --export', 'Export PNG image from document', Photoshop.exportImage)
-          .option('-i, --info', 'Display information', Photoshop.displayInfo);
+          .option('-i, --info', 'Display information', Photoshop.displayInfo)
+          .option('-t, --tree', 'Show layer tree', Photoshop.showTree);
 
         /**
          * Extend help with examples
@@ -68,6 +69,7 @@ var Photoshop = {
           console.log('    $ photoshop open file.psd');
           console.log('    $ photoshop --export file.psd');
           console.log('    $ photoshop -i file.psd');
+          console.log('    $ photoshop -t file.psd');
           console.log('');
         });
 
@@ -192,7 +194,45 @@ var Photoshop = {
                 }
             });
         }
+    },
+
+    /**
+     * Show the layer tree of the document
+     * @api public
+     */
+
+    showTree: function(){
+        if(Photoshop.checkFile()){
+            console.log(Photoshop.banner + 'Layer tree for the document '+ Photoshop.filepath.green +':');
+            console.log('');
+            PSD.open(Photoshop.filepath).then(function (psd) {
+                var tree = psd.tree().export();
+                var treeLimiter;
+                var getChildren = function(layer){
+                    if(layer.children){
+                        treeLimiter+= '-';
+                        _.each(layer.children, function(layer){
+                            if(layer.type === 'group'){
+                                console.log(treeLimiter.blue + ' ' + layer.name.green);
+                            }else{
+                                console.log(treeLimiter.blue + ' ' + layer.name);
+                            }
+                            getChildren(layer);
+                        });
+                    }
+                }
+                _.each(tree.children,function(layer){
+                    treeLimiter = '-';
+                    console.log(treeLimiter.blue + ' ' + layer.name.green);
+                    getChildren(layer);
+                });
+            }).then(function () {
+                console.log('');
+                console.log(Photoshop.banner + "Finished showing tree in " + ((new Date()) - start) + "ms.");
+            });
+        }
     }
+
 }
 
 /**
