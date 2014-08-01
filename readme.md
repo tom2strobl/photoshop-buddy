@@ -74,6 +74,12 @@ Currently only working on OSX. Might be only minimal work to support Windows (fi
 - Export CSS from document
 - Write tests and use travis-ci + add md-image
 
+## Credit
+
+Photoshop-Buddy would be nothing without the work of:
+
+- [Ryan LeFevre](https://github.com/meltingice)
+
 ## License
 
 License
